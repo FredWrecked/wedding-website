@@ -40,9 +40,16 @@ body {
   font-family: $sans-serif;
   font-weight: $light;
   color: $txt-primary;
+  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   //fix for iOS
 }
+
+form{
+  color: $txt-primary;
+  background-color: $background-color;
+}
+
 *:focus {
   outline: none !important;
 }
@@ -58,6 +65,9 @@ section .header {
 }
 .section-padding {
   padding: $section-padding;
+}
+.top-padding {
+  padding: 40px;
 }
 .section-border {
   border-bottom: 1px solid $keyline-color;
@@ -251,7 +261,7 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
+  min-height: 800px;
   background: url('../img/hero-min.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -266,10 +276,6 @@ Hero
   }*/
   .down-arrow a {
     color: $txt-light;
-  }
-  h1 {
-    color: $txt-light;
-    margin-bottom: 40px;
   }
   p.intro {
     color: $txt-light;
@@ -461,21 +467,7 @@ Features-stack
     padding-bottom: 0px;
     border-bottom: none;
   }
-  .ipad-wrap {
-    width: 706px;
-    height: 1002px;
-    background: url("../img/ipad-device.png") no-repeat center center;
-    z-index: 1;
-  }
-  .iphone-wrap {
-    width: 304px;
-    height: 620px;
-    background: url("../img/iphone6.png") no-repeat center center;
-    position: absolute;
-    left: 530px;
-    bottom: 129px;
-    z-index: 2;
-  }
+
   .device-showcase {
     position: absolute;
     bottom: -365px;
@@ -498,15 +490,6 @@ Features-stack
 
   .btn {
     margin-top: 20px;
-  }
-  .macbook-wrap {
-    position: absolute;
-    width: 916px;
-    height: 540px;
-    background: url("../img/macbook-pro.png") no-repeat center center;
-    top: 114px;
-    z-index: 4;
-    left: 50%;
   }
 }
 
@@ -647,25 +630,17 @@ Features-stack
 /* ==========================================================================
 Instagram
 ========================================================================== */
-#instagram {
-  img {
-    width: 100%;
-  }
-}
 
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
 #eng-pics {
   img {
-    width: 100%;
     height: auto;
     -moz-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
-  }
-  .img-wrap {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
@@ -723,30 +698,6 @@ Engagement Pics
 }
 
 /* ==========================================================================
-Embed video
-========================================================================== */
-#video-bg {
-  height: 300px;
-}
-#video-content {
-  width: 100%;
-  height: 100%;
-  padding-top: 100px;
-  position: relative;
-  background: rgba(17, 17, 17, 0.5);
-  text-align: center;
-}
-#video-content h5 {
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 300;
-  letter-spacing: 10px;
-}
-#video-content p {
-  color: #ffffff;
-}
-
-/* ==========================================================================
 Google map
 ========================================================================== */
 #map-canvas {
@@ -789,12 +740,14 @@ RSVP form
 ========================================================================== */
 .rsvp {
   padding-bottom: 140px;
+  text-align: center;
   .rsvp-form {
     .rsvp-btn {
       padding: 15px 0;
       border-radius: 3px;
       width: 100%;
-      font-size: 13px;
+      font-size: 18px;
+
     }
     .form-input-group {
       width: 100%;
@@ -803,7 +756,7 @@ RSVP form
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px;
-      border: solid 1px $keyline-color;
+      //border: solid 1px $accent-color;
       text-align: left;
       position: relative;
 
@@ -821,7 +774,7 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
+      i.fa-user, i.fa-music, i.fa-envelope, .fa-key {
         font-size: 14px;
         position: absolute;
         top: 50%;
@@ -836,6 +789,8 @@ RSVP form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+        background-color: $text-input-color;
+        font-size: 16px;
       }
       input::-webkit-input-placeholder {
         color: $form-placeholder;
@@ -858,7 +813,6 @@ Footer
 ========================================================================== */
 footer {
   .content {
-    border-top: 1px solid $keyline-color;
     padding-bottom: 20px;
   }
   .to-top-wrapper {
@@ -869,8 +823,8 @@ footer {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: 1px solid $keyline-color;
-    background: #fff;
+    border: 1px solid $accent-color;
+    background: $text-input-color;
   }
   .to-top-wrapper .to-top {
     display: block;
@@ -883,11 +837,7 @@ footer {
   .to-top-wrapper .to-top:hover {
     margin-top: -5px;
   }
-  span.fa-heart {
-    color: #ff415c;
-    font-size: 18px;
-    margin: 0 2px;
-  }
+
 }
 
 /* ==========================================================================
@@ -899,3 +849,72 @@ body.modal-open {
 .modal-body {
   padding:25px;
 }
+
+// Dropdown
+/* Dropdown Button */
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The search field */
+#myInput {
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  //padding: 14px 20px 12px 45px;
+  border: none;
+  //border-bottom: 1px solid #ddd;
+  background-color: $text-input-color;
+}
+
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  background-color: $text-input-color;
+  min-width: 230px;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid $accent-color;
+  margin: 0 auto 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  //border: solid 1px $accent-color;
+  text-align: left;
+  position: relative;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.doggo{
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+

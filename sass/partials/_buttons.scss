@@ -30,7 +30,7 @@
 	border-color: $accent-color;
 }
 .btn-fill {
-	color: $white-color;
+	color: $txt-primary;
 	border: solid 2px $accent-color;
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
@@ -38,6 +38,7 @@
 	display: inline-block;
 	text-transform: uppercase;
 	background-color: $accent-color;
+	font-weight: bold; /* Makes the text bold */
 }
 .btn-fill:hover, .btn-fill:focus {
 	color: $white-color;

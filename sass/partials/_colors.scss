@@ -1,7 +1,8 @@
 // Colours partial
 
 // Text colours
-$txt-primary: rgba(28, 54, 83, 0.6);
+$txt-primary: rgba(41, 51, 35, 0.6);
+$background-color: #bfd88e;
 // body font
 $txt-secondary: #3D4351;
 // heading font
@@ -11,16 +12,17 @@ $txt-accent: #ACB1B4;
 $form-placeholder: #BCC1C3;
 // form placeholder text
 // Global colours
-$accent-color: #e8ca6f;
+$accent-color: #987b42;
 // global accent colour
 $accent-color-hover: #d3b56a;
-// global accent colour hover
+// global accent colour hovergu
 $white-color: #fff;
 $black-color: #000;
 // Typography colours
-$h2-color: #3D4351;
-$h3-color: #3D4351;
-$h5-color: #3D4351;
+$h1-color: #574210;
+$h2-color: #574210;
+$h3-color: #574210;
+$h5-color:#574210;
 // Layout colours
 $section-light: #fff;
 $section-dark: #f8f9fd;
@@ -30,3 +32,5 @@ $footer-secondary: #373D4A;
 // Keylines
 $keyline-color: #E6E9EA;
 $footer-keyline-color: #4E566C;
+$button-color: #987b42;
+$text-input-color: #eeffcc;
