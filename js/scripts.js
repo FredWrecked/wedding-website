@@ -212,27 +212,39 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html('<div class="alert alert-info"><strong>Just a sec!</strong> We are saving your details.</div>');
+
         $.post('https://script.google.com/macros/s/AKfycbwNlhS9ZxHkRHY3ScT7epkx_E80tlyDL30q3pZUURacdS6mxtXw_gxOqJqABiLiLFgdbg/exec', data)
-            .done(function (data) {
-                console.log(data);
-                if (data.result === "error") {
-                    $('#alert-wrapper').html(alert_markup('danger', data.message));
-                } else {
-                    $('#rsvp-form')[0].reset();
-                    var parsedData = JSON.parse(data.data);
-                    $('#alert-wrapper').html('');
-                    if(parsedData['attend'][0] === "Joining"){
-                        $('#rsvp-modal').modal('show');
+            .done(function (response) {
+                try {
+                    // Check if response is already an object or a JSON string
+                    var parsedResponse;
+                    if (typeof response === "string") {
+                        parsedResponse = JSON.parse(response); // Parse if it's a JSON string
+                    } else {
+                        parsedResponse = response; // Directly use if it's already an object
                     }
-                    else{
-                        $('#consolation-modal').modal('show');
+
+                    if (parsedResponse.result === "error") {
+                        $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
+                    } else {
+                        $('#rsvp-form')[0].reset();
+                        var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+                        $('#alert-wrapper').html('');
+                        if (parsedData['attend'][0] === "Joining") {
+                            $('#rsvp-modal').modal('show');
+                        } else {
+                            $('#consolation-modal').modal('show');
+                        }
                     }
+                } catch (error) {
+                    $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
+                    console.error('Response parse error:', error);
                 }
             })
-            .fail(function (data) {
-                console.log(data);
-                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+            .fail(function (response) {
+                $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> There is some issue with the server.</div>');
+                console.error('Request failed:', response);
             });
     });
 
