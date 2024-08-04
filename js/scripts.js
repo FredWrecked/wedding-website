@@ -213,13 +213,8 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-        $.ajax({
-            type        : 'POST',
-            url         : 'https://script.google.com/macros/s/AKfycbzYjhNKDeTnuQF-Rwr-jw_b1WHkLcDOigl0zTAi76ZOgYIuYgz17YBqoIqh7oz32IZzbw/exec',
-            data        : data,
-            dataType    : 'json',
-            encode      : true
-        }).done(function (data) {
+        $.post('https://script.google.com/macros/s/AKfycbwNlhS9ZxHkRHY3ScT7epkx_E80tlyDL30q3pZUURacdS6mxtXw_gxOqJqABiLiLFgdbg/exec', data)
+            .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
                     $('#alert-wrapper').html(alert_markup('danger', data.message));
