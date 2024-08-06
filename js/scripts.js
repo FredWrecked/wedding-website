@@ -214,7 +214,7 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html('<div class="alert alert-info"><strong>Just a sec!</strong> We are saving your details.</div>');
 
-        $.post('https://script.google.com/macros/s/AKfycbzDz6nEX0WL9wK1CMtWXhff9901n1Lu7DJVH_PoBEfdiTFwe1zki6fsojRegxLUk05NcA/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec', data)
             .done(function (response) {
                 try {
                     // Check if response is already an object or a JSON string
@@ -229,15 +229,13 @@ $(document).ready(function () {
                         $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
                     } else {
                         $('#rsvp-form')[0].reset();
-                        // var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+                        var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
                         $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-
-                        // if (parsedData['attend'][0] === "Joining") {
-                        //     $('#rsvp-modal').modal('show');
-                        // } else {
-                        //     $('#consolation-modal').modal('show');
-                        // }
+                        if (parsedData['attend'][0] === "Joining") {
+                            $('#rsvp-modal').modal('show');
+                        } else {
+                            $('#consolation-modal').modal('show');
+                        }
                     }
                 } catch (error) {
                     $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
