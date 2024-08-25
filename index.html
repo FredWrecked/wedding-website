@@ -148,7 +148,7 @@
 
 <section class="rsvp" id="rsvp">
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="rsvp-modal" class="modal fade" style="visibility: hidden">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -165,7 +165,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="consolation-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="consolation-modal" class="modal fade" style="visibility: hidden">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -406,6 +406,78 @@ toggle between hiding and showing the dropdown content */
     function setInputValue(value) {
         document.getElementById('myInput').value = value;
     }
+
+    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle success response here
+            // console.log('Success:', data);
+            // alert('Form submitted successfully!');
+            let parsedResponse;
+            if (typeof data === "string") {
+                parsedResponse = JSON.parse(data); // Parse if it's a JSON string
+            } else {
+                parsedResponse = data; // Directly use if it's already an object
+            }
+
+            const parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+
+            console.log(parsedData['attend'][0] === "Joining");
+            if (parsedData['attend'][0] === "Joining") {
+                document.getElementById('top').innerHTML = document.getElementById('rsvp-modal').innerHTML
+            } else {
+                document.getElementById('top').innerHTML = document.getElementById('consolation-modal').innerHTML
+            }
+
+
+            // Redirect or update UI as needed
+        })
+        .catch(error => {
+            // Handle error response here
+            console.error('Error:', error);
+            alert('There was an error submitting the form.');
+        });
+
+        // $.post('https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec', data)
+        //     .done(function (response) {
+        //         try {
+        //             // Check if response is already an object or a JSON string
+        //             var parsedResponse;
+        //             if (typeof response === "string") {
+        //                 parsedResponse = JSON.parse(response); // Parse if it's a JSON string
+        //             } else {
+        //                 parsedResponse = response; // Directly use if it's already an object
+        //             }
+        //
+        //             if (parsedResponse.result === "error") {
+        //                 $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
+        //             } else {
+        //                 $('#rsvp-form')[0].reset();
+        //                 var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+        //                 $('#alert-wrapper').html('');
+        //                 if (parsedData['attend'][0] === "Joining") {
+        //                     $('#rsvp-modal').modal('show');
+        //                 } else {
+        //                     $('#consolation-modal').modal('show');
+        //                 }
+        //             }
+        //         } catch (error) {
+        //             $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
+        //             console.error('Response parse error:', error);
+        //         }
+        //     })
+        //     .fail(function (response) {
+        //         $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> There is some issue with the server.</div>');
+        //         console.error('Request failed:', response);
+        //     });
+    });
 </script>
 </body>
 </html>
