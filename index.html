@@ -75,7 +75,7 @@
                     Katharien, Fred, and their families invite you to celebrate their wedding on the 15<sup>th</sup> of February 2025 at Kleinood Farm in Stellenbosch.
                 </p>
                 <ul class="">
-                    <li><a href="#rsvp" style="font-size: 18px" class="rsvp-btn rsvp-form btn-fill btn-large btn-margin-right">RSVP</a></li>
+                    <li><a id="rsvp-link" href="#rsvp" style="font-size: 18px" class="rsvp-btn rsvp-form btn-fill btn-large btn-margin-right">RSVP</a></li>
                 </ul>
             </div>
         </div>
@@ -148,38 +148,49 @@
 
 <section class="rsvp" id="rsvp">
 
-    <div id="rsvp-modal" class="modal fade" style="visibility: hidden">
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
                     <div class="section-padding">
                         <h3>Thank you!</h3>
                         <p>Get your dancing shoes ready...</p>
                         <img class = "img doggo" src="img/party-mouse.jpg" alt=""/>
-                        <div id="add-to-cal"></div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="consolation-modal" class="modal fade" style="visibility: hidden">
+            </div>
+        </div>
+    </div>
+    <div id="rsvp-modal-plus-one" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
+                    <div class="section-padding">
+                        <h3>Thank you!</h3>
+                        <p>Get your dancing shoes ready...</p>
+                        <img class = "img doggo" src="img/party-mouse.jpg" alt=""/>
+                        <button class="rsvp-btn rsvp-form btn-fill btn-large " onclick="window.location.reload();">
+                            Would you like to add a plus one?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="consolation-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
                     <div class="section-padding">
                         <h3>Thank you!</h3>
                         <p>Hope to catch up another time.</p>
                         <img class = "img doggo" src="img/fence-kat.jpg" alt=""/>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -196,116 +207,116 @@
                                                                      placeholder="Name" id="myInput" onkeyup="filterFunction()"
                             required>
                                 <div id="myDropdown" class="dropdown-content">
-                                    <a href="#Heinrich Groenewald" onclick="setInputValue('Heinrich Groenewald')">Heinrich Groenewald</a>
-                                    <a href="#Stijn de Leeuw " onclick="setInputValue('Stijn de Leeuw ')">Stijn de Leeuw </a>
-                                    <a href="#Jeanne Gaigher" onclick="setInputValue('Jeanne Gaigher')">Jeanne Gaigher</a>
-                                    <a href="#Shona Van Der Merwe " onclick="setInputValue('Shona Van Der Merwe ')">Shona Van Der Merwe </a>
-                                    <a href="#Michele Mathison" onclick="setInputValue('Michele Mathison')">Michele Mathison</a>
-                                    <a href="#Sanri Pienaar" onclick="setInputValue('Sanri Pienaar')">Sanri Pienaar</a>
-                                    <a href="#Francois Burger" onclick="setInputValue('Francois Burger')">Francois Burger</a>
-                                    <a href="#Christine van Wyk" onclick="setInputValue('Christine van Wyk')">Christine van Wyk</a>
-                                    <a href="#Braam Visser" onclick="setInputValue('Braam Visser')">Braam Visser</a>
-                                    <a href="#Nadine Steenkamp" onclick="setInputValue('Nadine Steenkamp')">Nadine Steenkamp</a>
-                                    <a href="#De Beer Maree" onclick="setInputValue('De Beer Maree')">De Beer Maree</a>
-                                    <a href="#Mia Louw" onclick="setInputValue('Mia Louw')">Mia Louw</a>
-                                    <a href="#Chris van der Westhuyzen" onclick="setInputValue('Chris van der Westhuyzen')">Chris van der Westhuyzen</a>
-                                    <a href="#Brandaan Huigen" onclick="setInputValue('Brandaan Huigen')">Brandaan Huigen</a>
-                                    <a href="#Stephane Conradie" onclick="setInputValue('Stephane Conradie')">Stephane Conradie</a>
-                                    <a href="#Jean Matthee" onclick="setInputValue('Jean Matthee')">Jean Matthee</a>
-                                    <a href="#Amber Moire" onclick="setInputValue('Amber Moire')">Amber Moire</a>
-                                    <a href="#Joanna Melle" onclick="setInputValue('Joanna Melle')">Joanna Melle</a>
-                                    <a href="#Pierre Vermeulen" onclick="setInputValue('Pierre Vermeulen')">Pierre Vermeulen</a>
-                                    <a href="#Annemieke Olthuijs" onclick="setInputValue('Annemieke Olthuijs')">Annemieke Olthuijs</a>
-                                    <a href="#Brett Seiler" onclick="setInputValue('Brett Seiler')">Brett Seiler</a>
-                                    <a href="#Marijke Tymbios" onclick="setInputValue('Marijke Tymbios')">Marijke Tymbios</a>
-                                    <a href="#Joshua Pearse" onclick="setInputValue('Joshua Pearse')">Joshua Pearse</a>
-                                    <a href="#Catherine Rudolph" onclick="setInputValue('Catherine Rudolph')">Catherine Rudolph</a>
-                                    <a href="#Daniel de Villiers" onclick="setInputValue('Daniel de Villiers')">Daniel de Villiers</a>
-                                    <a href="#Christina Louw " onclick="setInputValue('Christina Louw ')">Christina Louw </a>
-                                    <a href="#Junior Fourie " onclick="setInputValue('Junior Fourie ')">Junior Fourie </a>
-                                    <a href="#Chris Oosthuizen " onclick="setInputValue('Chris Oosthuizen ')">Chris Oosthuizen </a>
-                                    <a href="#Markus Meyer " onclick="setInputValue('Markus Meyer ')">Markus Meyer </a>
-                                    <a href="#Chantél Meyer " onclick="setInputValue('Chantél Meyer ')">Chantél Meyer </a>
-                                    <a href="#Thomas Ochabski" onclick="setInputValue('Thomas Ochabski')">Thomas Ochabski</a>
-                                    <a href="#Kerry-Lee Ochabski " onclick="setInputValue('Kerry-Lee Ochabski ')">Kerry-Lee Ochabski </a>
-                                    <a href="#Thomas Meyer " onclick="setInputValue('Thomas Meyer ')">Thomas Meyer </a>
-                                    <a href="#Michael Weightman" onclick="setInputValue('Michael Weightman')">Michael Weightman</a>
-                                    <a href="#Carl Kotze " onclick="setInputValue('Carl Kotze ')">Carl Kotze </a>
-                                    <a href="#Kylie Tregoning Kotze " onclick="setInputValue('Kylie Tregoning Kotze ')">Kylie Tregoning Kotze </a>
-                                    <a href="#Ludiwien Cooreman " onclick="setInputValue('Ludiwien Cooreman ')">Ludiwien Cooreman </a>
-                                    <a href="#Ryan Ward" onclick="setInputValue('Ryan Ward')">Ryan Ward</a>
-                                    <a href="#Colin Kalimba" onclick="setInputValue('Colin Kalimba')">Colin Kalimba</a>
-                                    <a href="#Jesse Townsend " onclick="setInputValue('Jesse Townsend ')">Jesse Townsend </a>
-                                    <a href="#Alex Runge " onclick="setInputValue('Alex Runge ')">Alex Runge </a>
-                                    <a href="#Seung Cho  (조승)" onclick="setInputValue('Seung Cho  (조승)')">Seung Cho  (조승)</a>
-                                    <a href="#Jurie Venter Jnr " onclick="setInputValue('Jurie Venter Jnr ')">Jurie Venter Jnr </a>
-                                    <a href="#Julian Evans" onclick="setInputValue('Julian Evans')">Julian Evans</a>
-                                    <a href="#Philips Daniels " onclick="setInputValue('Philips Daniels ')">Philips Daniels </a>
-                                    <a href="#Henry Daniels " onclick="setInputValue('Henry Daniels ')">Henry Daniels </a>
-                                    <a href="#Magdalena Ringle " onclick="setInputValue('Magdalena Ringle ')">Magdalena Ringle </a>
-                                    <a href="#Isabella Daniels " onclick="setInputValue('Isabella Daniels ')">Isabella Daniels </a>
-                                    <a href="#Jasper Daniels" onclick="setInputValue('Jasper Daniels')">Jasper Daniels</a>
-                                    <a href="#Kate Daniels" onclick="setInputValue('Kate Daniels')">Kate Daniels</a>
-                                    <a href="#Hannah Daniels" onclick="setInputValue('Hannah Daniels')">Hannah Daniels</a>
-                                    <a href="#Michael Daniels" onclick="setInputValue('Michael Daniels')">Michael Daniels</a>
-                                    <a href="#Leon de Villiers" onclick="setInputValue('Leon de Villiers')">Leon de Villiers</a>
-                                    <a href="#Libby de Villiers" onclick="setInputValue('Libby de Villiers')">Libby de Villiers</a>
-                                    <a href="#Gerard de Villiers" onclick="setInputValue('Gerard de Villiers')">Gerard de Villiers</a>
-                                    <a href="#Spicer de Villiers" onclick="setInputValue('Spicer de Villiers')">Spicer de Villiers</a>
-                                    <a href="#Melissa de Villiers" onclick="setInputValue('Melissa de Villiers')">Melissa de Villiers</a>
-                                    <a href="#Carol Noah Isaacs" onclick="setInputValue('Carol Noah Isaacs')">Carol Noah Isaacs</a>
-                                    <a href="#Charles Isaacs" onclick="setInputValue('Charles Isaacs')">Charles Isaacs</a>
-                                    <a href="#Mfiseko" onclick="setInputValue('Mfiseko')">Mfiseko</a>
-                                    <a href="#Zoliswa" onclick="setInputValue('Zoliswa')">Zoliswa</a>
-                                    <a href="#Nancy" onclick="setInputValue('Nancy')">Nancy</a>
-                                    <a href="#Hans-Peter Bakker (Brother)" onclick="setInputValue('Hans-Peter Bakker (Brother)')">Hans-Peter Bakker (Brother)</a>
-                                    <a href="#Kiara Stanek" onclick="setInputValue('Kiara Stanek')">Kiara Stanek</a>
-                                    <a href="#Victor Bakker" onclick="setInputValue('Victor Bakker')">Victor Bakker</a>
-                                    <a href="#Isabel Louw" onclick="setInputValue('Isabel Louw')">Isabel Louw</a>
-                                    <a href="#Marisca Van-Zyl" onclick="setInputValue('Marisca Van-Zyl')">Marisca Van-Zyl</a>
-                                    <a href="#Eugene Van-Zyl" onclick="setInputValue('Eugene Van-Zyl')">Eugene Van-Zyl</a>
-                                    <a href="#Len Grobbelaar " onclick="setInputValue('Len Grobbelaar ')">Len Grobbelaar </a>
-                                    <a href="#Anda Grobbelaar" onclick="setInputValue('Anda Grobbelaar')">Anda Grobbelaar</a>
-                                    <a href="#Lané Grobbelaar" onclick="setInputValue('Lané Grobbelaar')">Lané Grobbelaar</a>
-                                    <a href="#Andelé Grobbelaar" onclick="setInputValue('Andelé Grobbelaar')">Andelé Grobbelaar</a>
-                                    <a href="#Lisa Roux" onclick="setInputValue('Lisa Roux')">Lisa Roux</a>
-                                    <a href="#Hans-Peter Bakker (Father)" onclick="setInputValue('Hans-Peter Bakker (Father)')">Hans-Peter Bakker (Father)</a>
-                                    <a href="#Johanna Naude" onclick="setInputValue('Johanna Naude')">Johanna Naude</a>
-                                    <a href="#Annemarie Bakker " onclick="setInputValue('Annemarie Bakker ')">Annemarie Bakker </a>
-                                    <a href="#Fred Bakker (Uncle)" onclick="setInputValue('Fred Bakker (Uncle)')">Fred Bakker (Uncle)</a>
-                                    <a href="#Greg Bakker" onclick="setInputValue('Greg Bakker')">Greg Bakker</a>
-                                    <a href="#Athina Vahla" onclick="setInputValue('Athina Vahla')">Athina Vahla</a>
-                                    <a href="#Erhardt Thiel" onclick="setInputValue('Erhardt Thiel')">Erhardt Thiel</a>
-                                    <a href="#Nora Thiel" onclick="setInputValue('Nora Thiel')">Nora Thiel</a>
-                                    <a href="#Rudi Thiel" onclick="setInputValue('Rudi Thiel')">Rudi Thiel</a>
-                                    <a href="#Karl Thiel" onclick="setInputValue('Karl Thiel')">Karl Thiel</a>
-                                    <a href="#Rene Slee" onclick="setInputValue('Rene Slee')">Rene Slee</a>
-                                    <a href="#Johan Slee" onclick="setInputValue('Johan Slee')">Johan Slee</a>
-                                    <a href="#Lilly Friedlander" onclick="setInputValue('Lilly Friedlander')">Lilly Friedlander</a>
-                                    <a href="#Marika Otto" onclick="setInputValue('Marika Otto')">Marika Otto</a>
-                                    <a href="#Chris Otto" onclick="setInputValue('Chris Otto')">Chris Otto</a>
-                                    <a href="#Runette Louw" onclick="setInputValue('Runette Louw')">Runette Louw</a>
-                                    <a href="#Joanie Combrink" onclick="setInputValue('Joanie Combrink')">Joanie Combrink</a>
-                                    <a href="#Ora Joubert" onclick="setInputValue('Ora Joubert')">Ora Joubert</a>
-                                    <a href="#Anita Groenewald" onclick="setInputValue('Anita Groenewald')">Anita Groenewald</a>
-                                    <a href="#Hein Groenewald" onclick="setInputValue('Hein Groenewald')">Hein Groenewald</a>
-                                    <a href="#Christa Andragh" onclick="setInputValue('Christa Andragh')">Christa Andragh</a>
-                                    <a href="#Theo Andragh" onclick="setInputValue('Theo Andragh')">Theo Andragh</a>
-                                    <a href="#Brenda Baumgarten" onclick="setInputValue('Brenda Baumgarten')">Brenda Baumgarten</a>
-                                    <a href="#Gary Baumgarten" onclick="setInputValue('Gary Baumgarten')">Gary Baumgarten</a>
-                                    <a href="#Minnie Engelbrecht" onclick="setInputValue('Minnie Engelbrecht')">Minnie Engelbrecht</a>
-                                    <a href="#Gerda Koeglenberg" onclick="setInputValue('Gerda Koeglenberg')">Gerda Koeglenberg</a>
+                                    <a href="#Heinrich Groenewald" id='Heinrich Groenewald' onclick="setInputValue('Heinrich Groenewald')">Heinrich Groenewald</a>
+                                    <a href="#Stijn de Leeuw " id='Stijn de Leeuw ' onclick="setInputValue('Stijn de Leeuw ')">Stijn de Leeuw </a>
+                                    <a href="#Jeanne Gaigher" id='Jeanne Gaigher' onclick="setInputValue('Jeanne Gaigher')">Jeanne Gaigher</a>
+                                    <a href="#Shona Van Der Merwe " id='Shona Van Der Merwe ' onclick="setInputValue('Shona Van Der Merwe ')">Shona Van Der Merwe </a>
+                                    <a href="#Michele Mathison" id='Michele Mathison' onclick="setInputValue('Michele Mathison')">Michele Mathison</a>
+                                    <a href="#Sanri Pienaar" id='Sanri Pienaar' onclick="setInputValue('Sanri Pienaar')">Sanri Pienaar</a>
+                                    <a href="#Francois Burger" id='Francois Burger' onclick="setInputValue('Francois Burger')">Francois Burger</a>
+                                    <a href="#Christine van Wyk" id='Christine van Wyk' onclick="setInputValue('Christine van Wyk')">Christine van Wyk</a>
+                                    <a href="#Braam Visser" id='Braam Visser' onclick="setInputValue('Braam Visser')">Braam Visser</a>
+                                    <a href="#Nadine Steenkamp" id='Nadine Steenkamp' onclick="setInputValue('Nadine Steenkamp')">Nadine Steenkamp</a>
+                                    <a href="#De Beer Maree" id='De Beer Maree' onclick="setInputValue('De Beer Maree')">De Beer Maree</a>
+                                    <a href="#Mia Louw" id='Mia Louw' onclick="setInputValue('Mia Louw')">Mia Louw</a>
+                                    <a href="#Chris van der Westhuyzen" id='Chris van der Westhuyzen' onclick="setInputValue('Chris van der Westhuyzen')">Chris van der Westhuyzen</a>
+                                    <a href="#Brandaan Huigen" id='Brandaan Huigen' onclick="setInputValue('Brandaan Huigen')">Brandaan Huigen</a>
+                                    <a href="#Stephane Conradie" id='Stephane Conradie' onclick="setInputValue('Stephane Conradie')">Stephane Conradie</a>
+                                    <a href="#Jean Matthee" id='Jean Matthee' onclick="setInputValue('Jean Matthee')">Jean Matthee</a>
+                                    <a href="#Amber Moire" id='Amber Moire' onclick="setInputValue('Amber Moire')">Amber Moire</a>
+                                    <a href="#Joanna Melle" id='Joanna Melle' onclick="setInputValue('Joanna Melle')">Joanna Melle</a>
+                                    <a href="#Pierre Vermeulen" id='Pierre Vermeulen' onclick="setInputValue('Pierre Vermeulen')">Pierre Vermeulen</a>
+                                    <a href="#Annemieke Olthuijs" id='Annemieke Olthuijs' onclick="setInputValue('Annemieke Olthuijs')">Annemieke Olthuijs</a>
+                                    <a href="#Brett Seiler" id='Brett Seiler' onclick="setInputValue('Brett Seiler')">Brett Seiler</a>
+                                    <a href="#Marijke Tymbios" id='Marijke Tymbios' onclick="setInputValue('Marijke Tymbios')">Marijke Tymbios</a>
+                                    <a href="#Joshua Pearse" id='Joshua Pearse' onclick="setInputValue('Joshua Pearse')">Joshua Pearse</a>
+                                    <a href="#Catherine Rudolph" id='Catherine Rudolph' onclick="setInputValue('Catherine Rudolph')">Catherine Rudolph</a>
+                                    <a href="#Daniel de Villiers" id='Daniel de Villiers' onclick="setInputValue('Daniel de Villiers')">Daniel de Villiers</a>
+                                    <a href="#Christina Louw " id='Christina Louw ' onclick="setInputValue('Christina Louw ')">Christina Louw </a>
+                                    <a href="#Junior Fourie " id='Junior Fourie ' onclick="setInputValue('Junior Fourie ')">Junior Fourie </a>
+                                    <a href="#Chris Oosthuizen " id='Chris Oosthuizen ' onclick="setInputValue('Chris Oosthuizen ')">Chris Oosthuizen </a>
+                                    <a href="#Markus Meyer " id='Markus Meyer ' onclick="setInputValue('Markus Meyer ')">Markus Meyer </a>
+                                    <a href="#Chantél Meyer " id='Chantél Meyer ' onclick="setInputValue('Chantél Meyer ')">Chantél Meyer </a>
+                                    <a href="#Thomas Ochabski" id='Thomas Ochabski' onclick="setInputValue('Thomas Ochabski')">Thomas Ochabski</a>
+                                    <a href="#Kerry-Lee Ochabski " id='Kerry-Lee Ochabski ' onclick="setInputValue('Kerry-Lee Ochabski ')">Kerry-Lee Ochabski </a>
+                                    <a href="#Thomas Meyer " id='Thomas Meyer ' onclick="setInputValue('Thomas Meyer ')">Thomas Meyer </a>
+                                    <a href="#Michael Weightman" id='Michael Weightman' onclick="setInputValue('Michael Weightman')">Michael Weightman</a>
+                                    <a href="#Carl Kotze " id='Carl Kotze ' onclick="setInputValue('Carl Kotze ')">Carl Kotze </a>
+                                    <a href="#Kylie Tregoning Kotze " id='Kylie Tregoning Kotze ' onclick="setInputValue('Kylie Tregoning Kotze ')">Kylie Tregoning Kotze </a>
+                                    <a href="#Ludiwien Cooreman " id='Ludiwien Cooreman ' onclick="setInputValue('Ludiwien Cooreman ')">Ludiwien Cooreman </a>
+                                    <a href="#Ryan Ward" id='Ryan Ward' onclick="setInputValue('Ryan Ward')">Ryan Ward</a>
+                                    <a href="#Colin Kalimba" id='Colin Kalimba' onclick="setInputValue('Colin Kalimba')">Colin Kalimba</a>
+                                    <a href="#Jesse Townsend " id='Jesse Townsend ' onclick="setInputValue('Jesse Townsend ')">Jesse Townsend </a>
+                                    <a href="#Alex Runge " id='Alex Runge ' onclick="setInputValue('Alex Runge ')">Alex Runge </a>
+                                    <a href="#Seung Cho  (조승)" id='Seung Cho  (조승)' onclick="setInputValue('Seung Cho  (조승)')">Seung Cho  (조승)</a>
+                                    <a href="#Jurie Venter Jnr " id='Jurie Venter Jnr ' onclick="setInputValue('Jurie Venter Jnr ')">Jurie Venter Jnr </a>
+                                    <a href="#Julian Evans" id='Julian Evans' onclick="setInputValue('Julian Evans')">Julian Evans</a>
+                                    <a href="#Philips Daniels " id='Philips Daniels ' onclick="setInputValue('Philips Daniels ')">Philips Daniels </a>
+                                    <a href="#Henry Daniels " id='Henry Daniels ' onclick="setInputValue('Henry Daniels ')">Henry Daniels </a>
+                                    <a href="#Magdalena Ringle " id='Magdalena Ringle ' onclick="setInputValue('Magdalena Ringle ')">Magdalena Ringle </a>
+                                    <a href="#Isabella Daniels " id='Isabella Daniels ' onclick="setInputValue('Isabella Daniels ')">Isabella Daniels </a>
+                                    <a href="#Jasper Daniels" id='Jasper Daniels' onclick="setInputValue('Jasper Daniels')">Jasper Daniels</a>
+                                    <a href="#Kate Daniels" id='Kate Daniels' onclick="setInputValue('Kate Daniels')">Kate Daniels</a>
+                                    <a href="#Hannah Daniels" id='Hannah Daniels' onclick="setInputValue('Hannah Daniels')">Hannah Daniels</a>
+                                    <a href="#Michael Daniels" id='Michael Daniels' onclick="setInputValue('Michael Daniels')">Michael Daniels</a>
+                                    <a href="#Leon de Villiers" id='Leon de Villiers' onclick="setInputValue('Leon de Villiers')">Leon de Villiers</a>
+                                    <a href="#Libby de Villiers" id='Libby de Villiers' onclick="setInputValue('Libby de Villiers')">Libby de Villiers</a>
+                                    <a href="#Gerard de Villiers" id='Gerard de Villiers' onclick="setInputValue('Gerard de Villiers')">Gerard de Villiers</a>
+                                    <a href="#Spicer de Villiers" id='Spicer de Villiers' onclick="setInputValue('Spicer de Villiers')">Spicer de Villiers</a>
+                                    <a href="#Melissa de Villiers" id='Melissa de Villiers' onclick="setInputValue('Melissa de Villiers')">Melissa de Villiers</a>
+                                    <a href="#Carol Noah Isaacs" id='Carol Noah Isaacs' onclick="setInputValue('Carol Noah Isaacs')">Carol Noah Isaacs</a>
+                                    <a href="#Charles Isaacs" id='Charles Isaacs' onclick="setInputValue('Charles Isaacs')">Charles Isaacs</a>
+                                    <a href="#Mfiseko" id='Mfiseko' onclick="setInputValue('Mfiseko')">Mfiseko</a>
+                                    <a href="#Zoliswa" id='Zoliswa' onclick="setInputValue('Zoliswa')">Zoliswa</a>
+                                    <a href="#Nancy" id='Nancy' onclick="setInputValue('Nancy')">Nancy</a>
+                                    <a href="#Hans-Peter Bakker (Brother)" id='Hans-Peter Bakker (Brother)' onclick="setInputValue('Hans-Peter Bakker (Brother)')">Hans-Peter Bakker (Brother)</a>
+                                    <a href="#Kiara Stanek" id='Kiara Stanek' onclick="setInputValue('Kiara Stanek')">Kiara Stanek</a>
+                                    <a href="#Victor Bakker" id='Victor Bakker' onclick="setInputValue('Victor Bakker')">Victor Bakker</a>
+                                    <a href="#Isabel Louw" id='Isabel Louw' onclick="setInputValue('Isabel Louw')">Isabel Louw</a>
+                                    <a href="#Marisca Van-Zyl" id='Marisca Van-Zyl' onclick="setInputValue('Marisca Van-Zyl')">Marisca Van-Zyl</a>
+                                    <a href="#Eugene Van-Zyl" id='Eugene Van-Zyl' onclick="setInputValue('Eugene Van-Zyl')">Eugene Van-Zyl</a>
+                                    <a href="#Len Grobbelaar " id='Len Grobbelaar ' onclick="setInputValue('Len Grobbelaar ')">Len Grobbelaar </a>
+                                    <a href="#Anda Grobbelaar" id='Anda Grobbelaar' onclick="setInputValue('Anda Grobbelaar')">Anda Grobbelaar</a>
+                                    <a href="#Lané Grobbelaar" id='Lané Grobbelaar' onclick="setInputValue('Lané Grobbelaar')">Lané Grobbelaar</a>
+                                    <a href="#Andelé Grobbelaar" id='Andelé Grobbelaar' onclick="setInputValue('Andelé Grobbelaar')">Andelé Grobbelaar</a>
+                                    <a href="#Lisa Roux" id='Lisa Roux' onclick="setInputValue('Lisa Roux')">Lisa Roux</a>
+                                    <a href="#Hans-Peter Bakker (Father)" id='Hans-Peter Bakker (Father)' onclick="setInputValue('Hans-Peter Bakker (Father)')">Hans-Peter Bakker (Father)</a>
+                                    <a href="#Johanna Naude" id='Johanna Naude' onclick="setInputValue('Johanna Naude')">Johanna Naude</a>
+                                    <a href="#Annemarie Bakker " id='Annemarie Bakker ' onclick="setInputValue('Annemarie Bakker ')">Annemarie Bakker </a>
+                                    <a href="#Fred Bakker (Uncle)" id='Fred Bakker (Uncle)' onclick="setInputValue('Fred Bakker (Uncle)')">Fred Bakker (Uncle)</a>
+                                    <a href="#Greg Bakker" id='Greg Bakker' onclick="setInputValue('Greg Bakker')">Greg Bakker</a>
+                                    <a href="#Athina Vahla" id='Athina Vahla' onclick="setInputValue('Athina Vahla')">Athina Vahla</a>
+                                    <a href="#Erhardt Thiel" id='Erhardt Thiel' onclick="setInputValue('Erhardt Thiel')">Erhardt Thiel</a>
+                                    <a href="#Nora Thiel" id='Nora Thiel' onclick="setInputValue('Nora Thiel')">Nora Thiel</a>
+                                    <a href="#Rudi Thiel" id='Rudi Thiel' onclick="setInputValue('Rudi Thiel')">Rudi Thiel</a>
+                                    <a href="#Karl Thiel" id='Karl Thiel' onclick="setInputValue('Karl Thiel')">Karl Thiel</a>
+                                    <a href="#Rene Slee" id='Rene Slee' onclick="setInputValue('Rene Slee')">Rene Slee</a>
+                                    <a href="#Johan Slee" id='Johan Slee' onclick="setInputValue('Johan Slee')">Johan Slee</a>
+                                    <a href="#Lilly Friedlander" id='Lilly Friedlander' onclick="setInputValue('Lilly Friedlander')">Lilly Friedlander</a>
+                                    <a href="#Marika Otto" id='Marika Otto' onclick="setInputValue('Marika Otto')">Marika Otto</a>
+                                    <a href="#Chris Otto" id='Chris Otto' onclick="setInputValue('Chris Otto')">Chris Otto</a>
+                                    <a href="#Runette Louw" id='Runette Louw' onclick="setInputValue('Runette Louw')">Runette Louw</a>
+                                    <a href="#Joanie Combrink" id='Joanie Combrink' onclick="setInputValue('Joanie Combrink')">Joanie Combrink</a>
+                                    <a href="#Ora Joubert" id='Ora Joubert' onclick="setInputValue('Ora Joubert')">Ora Joubert</a>
+                                    <a href="#Anita Groenewald" id='Anita Groenewald' onclick="setInputValue('Anita Groenewald')">Anita Groenewald</a>
+                                    <a href="#Hein Groenewald" id='Hein Groenewald' onclick="setInputValue('Hein Groenewald')">Hein Groenewald</a>
+                                    <a href="#Christa Andragh" id='Christa Andragh' onclick="setInputValue('Christa Andragh')">Christa Andragh</a>
+                                    <a href="#Theo Andragh" id='Theo Andragh' onclick="setInputValue('Theo Andragh')">Theo Andragh</a>
+                                    <a href="#Brenda Baumgarten" id='Brenda Baumgarten' onclick="setInputValue('Brenda Baumgarten')">Brenda Baumgarten</a>
+                                    <a href="#Gary Baumgarten" id='Gary Baumgarten' onclick="setInputValue('Gary Baumgarten')">Gary Baumgarten</a>
+                                    <a href="#Minnie Engelbrecht" id='Minnie Engelbrecht' onclick="setInputValue('Minnie Engelbrecht')">Minnie Engelbrecht</a>
+                                    <a href="#Gerda Koeglenberg" id='Gerda Koeglenberg' onclick="setInputValue('Gerda Koeglenberg')">Gerda Koeglenberg</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12" style="padding-top: 25px; padding-bottom: 10px">
-                        <label style="padding-right: 15px; font-size: 18px;">I will be joining</label>
+                        <label style="padding-right: 15px; font-size: 18px;">will be joining</label>
                         <input type="radio" name="attend" class="" value="Joining"
                                required>
                     </div>
                     <div class="col-md-12 col-sm-12" style="padding-bottom: 25px">
-                        <label style="padding-right: 15px; font-size: 18px;">I will not be joining</label>
+                        <label style="padding-right: 15px; font-size: 18px;">will not be joining</label>
                         <input type="radio" name="attend" class="" value="Not Joining"
                                required>
                     </div>
@@ -338,10 +349,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
+                    <button class="btn-fill rsvp-btn" id="submit">
                         Send Response
                     </button>
                 </form>
@@ -407,10 +415,16 @@ toggle between hiding and showing the dropdown content */
         document.getElementById('myInput').value = value;
     }
 
+
+
+
     document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
-
+        const button = document.getElementById('submit');
+        const originalText = button.textContent;
+        button.innerHTML = 'Submitting <span class="spinner"></span>';
+        button.disabled = true;
         fetch(this.action, {
             method: 'POST',
             body: formData,
@@ -426,58 +440,79 @@ toggle between hiding and showing the dropdown content */
             } else {
                 parsedResponse = data; // Directly use if it's already an object
             }
-
-            const parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
-
-            console.log(parsedData['attend'][0] === "Joining");
-            if (parsedData['attend'][0] === "Joining") {
-                document.getElementById('top').innerHTML = document.getElementById('rsvp-modal').innerHTML
+            if (parsedResponse.result === "error") {
+                alert('There was an error submitting the form.');
             } else {
-                document.getElementById('top').innerHTML = document.getElementById('consolation-modal').innerHTML
+                document.getElementById('rsvp-form')[0].reset();
+                var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+                if (parsedData['attend'][0] === "Joining") {
+                    if (hasPlusOne(parsedData['name'][0])){
+                        document.getElementById('top').innerHTML = document.getElementById('rsvp-modal-plus-one').innerHTML
+                    }
+                    else {
+                        document.getElementById('top').innerHTML = document.getElementById('rsvp-modal').innerHTML
+                    }
+                } else {
+                    document.getElementById('top').innerHTML = document.getElementById('consolation-modal').innerHTML
+                }
             }
 
-
-            // Redirect or update UI as needed
+            button.disabled = false;
+            button.innerHTML = originalText;
         })
         .catch(error => {
             // Handle error response here
             console.error('Error:', error);
             alert('There was an error submitting the form.');
+            button.disabled = false;
+            button.innerHTML = originalText;
         });
 
-        // $.post('https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec', data)
-        //     .done(function (response) {
-        //         try {
-        //             // Check if response is already an object or a JSON string
-        //             var parsedResponse;
-        //             if (typeof response === "string") {
-        //                 parsedResponse = JSON.parse(response); // Parse if it's a JSON string
-        //             } else {
-        //                 parsedResponse = response; // Directly use if it's already an object
-        //             }
-        //
-        //             if (parsedResponse.result === "error") {
-        //                 $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
-        //             } else {
-        //                 $('#rsvp-form')[0].reset();
-        //                 var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
-        //                 $('#alert-wrapper').html('');
-        //                 if (parsedData['attend'][0] === "Joining") {
-        //                     $('#rsvp-modal').modal('show');
-        //                 } else {
-        //                     $('#consolation-modal').modal('show');
-        //                 }
-        //             }
-        //         } catch (error) {
-        //             $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
-        //             console.error('Response parse error:', error);
-        //         }
-        //     })
-        //     .fail(function (response) {
-        //         $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> There is some issue with the server.</div>');
-        //         console.error('Request failed:', response);
-        //     });
     });
+
+    function hasPlusOne(guest) {
+        if (guest === 'Jeanne Gaigher') return true
+        if (guest === 'Sanri Pienaar') return true
+        if (guest === 'Francois Burger') return true
+        if (guest === 'Joanna Melle') return true
+        if (guest === 'Pierre Vermeulen') return true
+        if (guest === 'Annemieke Olthuijs') return true
+        if (guest === 'Brett Seiler') return true
+        if (guest === 'Marijke Tymbios') return true
+        if (guest === 'Junior Fourie ') return true
+        if (guest === 'Chris Oosthuizen ') return true
+        if (guest === 'Thomas Meyer ') return true
+        if (guest === 'Michael Weightman') return true
+        if (guest === 'Ludiwien Cooreman ') return true
+        if (guest === 'Ryan Ward') return true
+        if (guest === 'Colin Kalimba') return true
+        if (guest === 'Jesse Townsend ') return true
+        if (guest === 'Alex Runge ') return true
+        if (guest === 'Seung Cho  (조승)') return true
+        if (guest === 'Jurie Venter Jnr ') return true
+        if (guest === 'Julian Evans') return true
+        if (guest === 'Philips Daniels ') return true
+        if (guest === 'Isabella Daniels ') return true
+        if (guest === 'Hannah Daniels') return true
+        if (guest === 'Michael Daniels') return true
+        if (guest === 'Leon de Villiers') return true
+        if (guest === 'Lané Grobbelaar') return true
+        if (guest === 'Andelé Grobbelaar') return true
+        if (guest === 'Fred Bakker (Uncle)') return true
+        if (guest === 'Greg Bakker') return true
+        if (guest === 'Athina Vahla') return true
+        if (guest === 'Rudi Thiel') return true
+        if (guest === 'Karl Thiel') return true
+        if (guest === 'Lilly Friedlander') return true
+        if (guest === 'Joanie Combrink') return true
+        if (guest === 'Ora Joubert') return true
+        if (guest === 'Minnie Engelbrecht') return true
+        if (guest === 'Gerda Koeglenberg') return true
+        return false
+    }
+
+
+
 </script>
 </body>
 </html>

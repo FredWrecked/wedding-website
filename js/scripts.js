@@ -208,45 +208,45 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-
-        $('#alert-wrapper').html('<div class="alert alert-info"><strong>Just a sec!</strong> We are saving your details.</div>');
-
-        $.post('https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec', data)
-            .done(function (response) {
-                try {
-                    // Check if response is already an object or a JSON string
-                    var parsedResponse;
-                    if (typeof response === "string") {
-                        parsedResponse = JSON.parse(response); // Parse if it's a JSON string
-                    } else {
-                        parsedResponse = response; // Directly use if it's already an object
-                    }
-
-                    if (parsedResponse.result === "error") {
-                        $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
-                    } else {
-                        $('#rsvp-form')[0].reset();
-                        var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
-                        $('#alert-wrapper').html('');
-                        if (parsedData['attend'][0] === "Joining") {
-                            $('#rsvp-modal').modal('show');
-                        } else {
-                            $('#consolation-modal').modal('show');
-                        }
-                    }
-                } catch (error) {
-                    $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
-                    console.error('Response parse error:', error);
-                }
-            })
-            .fail(function (response) {
-                $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> There is some issue with the server.</div>');
-                console.error('Request failed:', response);
-            });
-    });
+    // $('#rsvp-form').on('submit', function (e) {
+    //     e.preventDefault();
+    //     var data = $(this).serialize();
+    //
+    //     $('#alert-wrapper').html('<div class="alert alert-info"><strong>Just a sec!</strong> We are saving your details.</div>');
+    //
+    //     $.post('https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec', data)
+    //         .done(function (response) {
+    //             try {
+    //                 // Check if response is already an object or a JSON string
+    //                 var parsedResponse;
+    //                 if (typeof response === "string") {
+    //                     parsedResponse = JSON.parse(response); // Parse if it's a JSON string
+    //                 } else {
+    //                     parsedResponse = response; // Directly use if it's already an object
+    //                 }
+    //
+    //                 if (parsedResponse.result === "error") {
+    //                     $('#alert-wrapper').html('<div class="alert alert-danger">' + parsedResponse.message + '</div>');
+    //                 } else {
+    //                     $('#rsvp-form')[0].reset();
+    //                     var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
+    //                     $('#alert-wrapper').html('');
+    //                     if (parsedData['attend'][0] === "Joining") {
+    //                         $('#rsvp-modal').modal('show');
+    //                     } else {
+    //                         $('#consolation-modal').modal('show');
+    //                     }
+    //                 }
+    //             } catch (error) {
+    //                 $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> Unable to process response.</div>');
+    //                 console.error('Response parse error:', error);
+    //             }
+    //         })
+    //         .fail(function (response) {
+    //             $('#alert-wrapper').html('<div class="alert alert-danger"><strong>Sorry!</strong> There is some issue with the server.</div>');
+    //             console.error('Request failed:', response);
+    //         });
+    // });
 
 
 
