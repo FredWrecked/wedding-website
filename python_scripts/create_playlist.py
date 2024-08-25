@@ -1,5 +1,14 @@
 import ytmusicapi
 from ytmusicapi import YTMusic
+import pandas as pd
+
+
+def fetch_id(search):
+    results = ytmusic.search(query=search)
+    song_results = [result for result in results if result['category']=='Songs' and result['resultType']=='song']
+    return song_results[0]['videoId']
+
+
 
 # Paste headers from a post request to youtube music in firefox
 headers= """
@@ -33,44 +42,16 @@ ytmusicapi.setup(filepath="browser.json", headers_raw=headers)
 
 ytmusic = YTMusic("browser.json")
 
-def fetch_id(search):
-    results = ytmusic.search(query=search)
-    song_results = [result for result in results if result['category']=='Songs' and result['resultType']=='song']
-    return song_results[0]['videoId']
+df = pd.read_excel('/home/fred/WebstormProjects/wedding-website-live/python_scripts/RSVP for Wedding.xlsx', sheet_name = 'responses')
 
-# Testing
-# songs = [
-#     "Bohemian Rhapsody - Queen",
-#     "Imagine - John Lennon",
-#     "Hey Jude - The Beatles",
-#     "Like a Rolling Stone - Bob Dylan",
-#     "What's Going On - Marvin Gaye",
-#     "Stairway to Heaven - Led Zeppelin",
-#     "Hotel California - Eagles",
-#     "Billie Jean - Michael Jackson",
-#     "Sweet Child O' Mine - Guns N' Roses",
-#     "Smells Like Teen Spirit - Nirvana",
-#     "Shake It Off - Taylor Swift",
-#     "Rolling in the Deep - Adele",
-#     "Uptown Funk - Mark Ronson ft. Bruno Mars",
-#     "Someone Like You - Adele",
-#     "Shape of You - Ed Sheeran",
-#     "Blinding Lights - The Weeknd",
-#     "Old Town Road - Lil Nas X",
-#     "Bad Guy - Billie Eilish",
-#     "Despacito - Luis Fonsi ft. Daddy Yankee",
-#     "Blinding Lights - The Weeknd"
-# ]
+songs = list(df['song1'].dropna()) + list(df['song2'].dropna()) + list(df['song3'].dropna())
 
-ids = []
-for song in songs:
-    print(song)
-    ids.append(fetch_id(song))
+ids = [fetch_id(song) for song in songs]
 
 ytmusic.create_playlist(
-    title = "Fred's Test playlist",
-    description = "10 Random songs given by chat GPT.",
+    title = "Test Wedding Playlist",
+    description = "Test Wedding Playlist.",
     video_ids = ids
 )
 
-print("Playlist Created")
+print('Playlist created')
