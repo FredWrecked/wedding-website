@@ -198,7 +198,7 @@
                 <h3>RSVP</h3>
                 <p>We would appreciate it if you could RSVP before 1st of October 2024</p>
                 <form id="rsvp-form" class="rsvp-form"
-                      action="https://script.google.com/macros/s/AKfycbxVhpMdkIJRkGYLcZI1Mtuqn_vSmOkVtWaR5NI5WP_oJK3N1UtRX6Uc6YxL4oCeJmqkVw/exec"
+                      action="https://script.google.com/macros/s/AKfycbyqor6Yy2Xcvmxft7ovcEBO9jlgSvXqwlxZX3MJjputX9JFiMkEsIX3jyct8Hrp1zr_mg/exec"
                       method="POST">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
@@ -443,7 +443,7 @@ toggle between hiding and showing the dropdown content */
             if (parsedResponse.result === "error") {
                 alert('There was an error submitting the form.');
             } else {
-                document.getElementById('rsvp-form')[0].reset();
+                // document.getElementById('rsvp-form')[0].reset();
                 var parsedData = JSON.parse(parsedResponse.data); // Parse nested JSON string
                 if (parsedData['attend'][0] === "Joining") {
                     if (hasPlusOne(parsedData['name'][0])){
